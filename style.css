@@ -1,535 +1,90 @@
-/* Reset some default styles */
-* {
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    color: #333;
-  }
-  .new{
-    text-align: justify;
-  }
-  
-  .container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
-  .container-fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    background-color: #fff; /* Set the desired background color for the fixed container */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for a visual effect */
-  }
-  
-  
-  header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
-    background-color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #333;
     color: #fff;
-    padding: 20px;
-  }
-  
-  nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  nav ul li {
-    margin-right: 20px;
-  }
-  
-  nav ul li:first-child {
-    margin-right: auto;
-    margin-left: 20px;
-  }
-  
-  nav ul li a {
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #77aaff 3px solid;
+}
+
+header a {
     color: #fff;
     text-decoration: none;
+    text-transform: uppercase;
     font-size: 16px;
-    padding: 10px 15px;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+header ul li {
+    display: inline;
+    padding: 0 20px;
+}
+
+header h1 {
+    float: left;
+}
+
+nav {
+    float: right;
+    margin-top: 10px;
+}
+
+main {
+    padding: 20px;
+    background: #fff;
+    margin-top: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  nav ul li a:hover {
-    background-color: #56b2ea;
-  }
-  
-  header h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  header a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  
+}
 
-  section {
-    padding: 60px 0;
-  }
-  
-  h2 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  
-  .project {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 40px;
-    transition: transform 0.3s ease;
-  }
-  
-  .project:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .project h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .project p {
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-  }
-  
-  form input,
-  form textarea {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-  }
-  
-  form button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  form button:hover {
-    background-color: #66c0f4;
-  }
-  
-  footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-  }
-  
-  footer p {
-    font-size: 14px;
-    font-weight: 400;
-  }
-  
-  /* Additional styles */
-  
-  header h1 a {
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  section#home {
-    background-color: #66c0f4;
+footer {
+    background: #333;
     color: #fff;
     text-align: center;
-    padding: 100px 0;
-  }
-  
-  section#home h2 {
-    font-size: 42px;
-    font-weight: 700;
-    margin-bottom: 20px;
-  }
-  
-  section#home p {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 40px;
-  }
-  
-  section#about {
-    text-align: center;
-  }
-  
-  section#about p {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  .project:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  section#education ul,
-  section#skills ul {
-    list-style: none;
-    margin-left: 0;
-    padding-left: 0;
-  }
-  
-  section#education li,
-  section#skills li {
-    margin-bottom: 10px;
-  }
-  
-  section#education h3,
-  section#skills li {
-    font-size: 18px;
-    font-weight: 600;
-  }
-  
-  section#education p {
-    margin-bottom: 5px;
-  }
-  
-  section#skills {
-  padding: 60px 0;
-  background-color: #f9f9f9;
-}
-
-.skills-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.skills-list li {
-  background-color: #66c0f4;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 16px;
-  margin: 10px;
-  transition: transform 0.3s ease;
-  display: flex;
-  align-items: center;
-}
-
-.skills-list li:hover {
-  transform: scale(1.1);
-  background-color: #56b2ea;
-}
-
-.skills-list li span {
-  margin-left: 10px;
-}
-
-.skills-list li i {
-  margin-right: 5px;
-}
-
-.skills-list li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.skills-list li a:hover {
-  text-decoration: underline;
-}
-
-.skills-list li:before {
-  content: "\f058";
-  font-family: "FontAwesome";
-  margin-right: 5px;
-}
-
-.skills-list li.html5:before {
-  content: "\f13b";
-}
-
-.skills-list li.css3:before {
-  content: "\f13c";
-}
-
-.skills-list li.js:before {
-  content: "\f3b9";
-}
-
-.skills-list li.python:before {
-  content: "\f3e2";
-}
-
-.skills-list li.php:before {
-  content: "\f457";
-}
-
-.skills-list li.react:before {
-  content: "\f461";
-}
-
-.skills-list li.vue:before {
-  content: "\f41f";
-}
-
-.skills-list li.node:before {
-  content: "\f419";
-}
-
-.skills-list li.mysql:before {
-  content: "\f5c6";
-}
-
-.skills-list li.mongodb:before {
-  content: "\f5ba";
-}
-
-.skills-list li i:before {
-  font-size: 24px;
-}
-
-.skills-list li span {
-  margin-left: 10px;
-}
-s
-  
-  section#contact form {
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  
-  section#contact input,
-  section#contact textarea {
-    width: 100%;
-    padding: 15px;
-    font-size: 16px;
-    border: none;
-    background-color: #f5f5f5;
-  }
-  
-  section#contact textarea {
-    resize: vertical;
-    min-height: 120px;
-  }
-  
-  section#contact button {
-    padding: 15px 30px;
-    background-color: #333;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  section#contact button:hover {
-    background-color: #66c0f4;
-  }
-  
-  /* Additional Customization */
-  
-  section#education h2,
-  section#skills h2 {
-    text-align: center;
-  }
-  
-  section#education ul {
-    text-align: left;
-  }
-  
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .skills-list li {
-    background-color: #66c0f4;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    margin-right: 10px;
-    margin-bottom: 10px;
-    font-size: 14px;
-    transition: transform 0.3s ease;
-  }
-  
-  .skills-list li:hover {
-    background-color: #56b2ea;
-    transform: scale(1.1);
-  }
-  
-  .social-icons {
-    text-align: center;
+    padding: 10px 0;
     margin-top: 20px;
-  }
-  
-  .social-icons a {
-    display: inline-block;
-    margin-right: 10px;
+    border-top: #77aaff 3px solid;
+}
+
+h2 {
     color: #333;
-    font-size: 20px;
-    transition: color 0.3s ease;
-  }
-  
-  .social-icons a:hover {
-    color: #66c0f4;
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .fadeIn {
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  /* New Style for Education Section */
-  section#education {
-    background-color: #f9f9f9;
-    padding: 60px 0;
-  }
-  
-  .education-list {
-    margin-bottom: 40px;
-  }
-  
-  .education-list li {
-    display: flex;
-    margin-bottom: 20px;
-  }
-  
-  .education-list li .icon {
-    margin-right: 20px;
-    color: #66c0f4;
-    font-size: 24px;
-  }
-  
-  .education-list li .content {
-    flex-grow: 1;
-  }
-  
-  .education-list li .content h3 {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-  }
-  
-  .education-list li .content p {
-    font-size: 16px;
-    font-weight: 400;
-    margin-bottom: 5px;
-  }
-  
-  .education-list li .content span {
-    display: inline-block;
-    background-color: #66c0f4;
-    color: #fff;
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 14px;
-    margin-right: 5px;
-  }
-  section#contact {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-  }
-  
-  .contact-content {
-    position: relative;
-    opacity: 0;
-    transform: translateX(-100%);
-    animation: slide-in 0.8s forwards;
-  }
-  
-  @keyframes slide-in {
-    0% {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-  section#coding-platforms {
-    padding: 60px 0;
-    background-color: #f9f9f9;
-    text-align: center;
-  }
-  
-  section#coding-platforms h3 {
-    color: #DAA520;
-    margin-bottom: 20px;
-  }
-  
-  section#coding-platforms .platform-list {
-    list-style-type: none;
+}
+
+ul {
+    list-style: none;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  section#coding-platforms .platform-list li {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-  }
-  
-  section#coding-platforms .platform-list li i {
-    font-size: 24px;
-    color: #DAA520;
-    margin-right: 10px;
-  }
-  
-  section#coding-platforms .platform-list li span {
-    font-size: 16px;
-  }
-  
-  section#coding-platforms .platform-list li:hover {
-    color: #DAA520;
-    cursor: pointer;
-    transform: scale(1.1);
-  }
+}
+
+ul li {
+    background: #77aaff;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul li a:hover {
+    text-decoration: underline;
+}
